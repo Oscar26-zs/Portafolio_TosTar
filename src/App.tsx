@@ -10,17 +10,15 @@ import { PageTransition } from "@/components/motion/PageTransition";
 import { SiteStarField } from "@/components/motion/StarField";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
-import Resume from "@/pages/Resume";
 
 function AnimatedRoutes() {
   const location = useLocation();
   // Group "/" and unknown paths under the same key so they don't re-animate between each other
-  const key = location.pathname === "/about" || location.pathname === "/resume" ? location.pathname : "/";
+  const key = location.pathname === "/about" ? location.pathname : "/";
   return (
     <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
       <Routes location={location} key={key}>
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/resume" element={<PageTransition><Resume /></PageTransition>} />
         <Route path="*" element={<PageTransition><Home /></PageTransition>} />
       </Routes>
     </AnimatePresence>

@@ -6,7 +6,7 @@ export const footerData = {
   email: "oscarzswork@gmail.com",
   message: { en: "All rights reserved", es: "Todos los derechos reservados" } as Localized,
   socialTitle: { en: "Social Media", es: "Redes Sociales" } as Localized,
-  roleTitle: { en: "Frontend Developer", es: "Desarrollador Frontend" } as Localized,
+  roleTitle: { en: "Systems Engineer", es: "Ingeniero en Sistemas" } as Localized,
   // same links for every language
   socialLinks: [
     { id: 1, name: "GitHub", href: "https://github.com/Oscar26-zs" },

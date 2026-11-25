@@ -2,11 +2,11 @@ import type { Localized } from "@/context/LanguageContext";
 
 export const profile = {
   name: "Oscar Zúñiga Sánchez",
-  title: { en: "Frontend Developer", es: "Desarrollador Frontend" } as Localized,
+  title: { en: "Systems Engineer", es: "Ingeniero en Sistemas" } as Localized,
   image: "/images/profile.jpg",
   description: {
-    en: "As a Frontend Developer, I am passionate about creating clean and functional applications that provide an intuitive and enjoyable user experience. I enjoy working from the planning of the framework to the final details, ensuring an orderly and consistent flow in each project. I strongly believe in continuous improvement and value feedback as an opportunity to grow professionally and personally. My focus is on developing modern and scalable solutions that combine aesthetics and performance, always thinking about ease of use for the end user.",
-    es: "Como Desarrollador Frontend, me apasiona crear aplicaciones limpias y funcionales que brinden una experiencia de usuario intuitiva y agradable. Disfruto trabajar desde la planificación de la estructura hasta los detalles finales, asegurando un flujo ordenado y consistente en cada proyecto. Creo firmemente en la mejora continua y valoro las retroalimentaciones como una oportunidad para crecer profesional y personalmente. Mi enfoque está en desarrollar soluciones modernas y escalables que combinan estética y rendimiento, siempre pensando en facilitar el uso para el usuario final.",
+    en: "As a Systems Engineer, I am passionate about designing and building clean, scalable and well-structured software, from web applications and management systems to artificial intelligence agents. I enjoy taking part in the whole development cycle: requirements analysis, architecture, implementation, testing and delivery, ensuring an orderly and consistent flow in each project. I strongly believe in continuous improvement and value feedback as an opportunity to grow professionally and personally. My focus is on creating modern and reliable solutions that solve real problems, combining good engineering practices with a clear experience for the end user.",
+    es: "Como Ingeniero en Sistemas, me apasiona diseñar y construir software limpio, escalable y bien estructurado, desde aplicaciones web y sistemas administrativos hasta agentes de inteligencia artificial. Disfruto participar en todo el ciclo de desarrollo: el análisis de requerimientos, la arquitectura, la implementación, las pruebas y la entrega, asegurando un flujo ordenado y consistente en cada proyecto. Creo firmemente en la mejora continua y valoro la retroalimentación como una oportunidad para crecer profesional y personalmente. Mi enfoque está en crear soluciones modernas y confiables que resuelvan problemas reales, combinando buenas prácticas de ingeniería con una experiencia de uso clara para el usuario final.",
   } as Localized,
 };
 
@@ -63,14 +63,9 @@ export interface WorkExperience {
   technologies: string[];
 }
 
-export const workExperience: WorkExperience[] = [
-  {
+/** Work done at Novacomp — shared by the Nova AI Apprentice and Junior Developer Intern roles */
+const novacompWork: Pick<WorkExperience, "company" | "location" | "mode" | "summary" | "achievements" | "technologies"> = {
   company: { en: "Novacomp", es: "Novacomp" },
-  position: { en: "Nova AI Apprentice", es: "Nova AI Apprentice" },
-  period: { en: "July 2026 – Present", es: "Julio 2026 – Presente" },
-  location: { en: "Orotina, Alajuela (Hybrid)", es: "Orotina, Alajuela (Híbrido)" },
-  mode: { en: "Hybrid", es: "Híbrido" },
-  current: true,
   summary: {
     en: "I build AI agents and multi-agent systems with LLMs, RAG and agent observability, working in a team under a Spec Driven Development methodology.",
     es: "Desarrollo agentes de inteligencia artificial y sistemas multiagente con LLMs, RAG y observabilidad de agentes, trabajando en equipo bajo la metodología Spec Driven Development.",
@@ -92,7 +87,33 @@ export const workExperience: WorkExperience[] = [
     ],
   },
   technologies: ["LangGraph", "LangChain", "Langfuse", "RAG", "LLM", "Embeddings", "Docker", "DevPod", "Spec Driven Development"],
-},
+};
+
+export const workExperience: WorkExperience[] = [
+  {
+    ...novacompWork,
+    position: { en: "Junior Developer Intern", es: "Junior Developer Intern" },
+    location: { en: "Remote", es: "Remoto" },
+    period: { en: "November 2026 – Present", es: "Noviembre 2026 – Presente" },
+    current: true,
+    achievements: {
+      en: [
+        "Earned the Oracle Cloud Infrastructure Certified Enterprise AI Professional certification.",
+        ...novacompWork.achievements.en,
+      ],
+      es: [
+        "Obtuve la certificación Oracle Cloud Infrastructure Certified Enterprise AI Professional.",
+        ...novacompWork.achievements.es,
+      ],
+    },
+  },
+  {
+    ...novacompWork,
+    position: { en: "Nova AI Apprentice", es: "Nova AI Apprentice" },
+    location: { en: "Orotina, Alajuela (Hybrid)", es: "Orotina, Alajuela (Híbrido)" },
+    period: { en: "July 2026 – November 2026", es: "Julio 2026 – Noviembre 2026" },
+    current: false,
+  },
 {
   company: { en: "Rolosa", es: "Rolosa" },
   position: { en: "Web Developer (Professional Internship)", es: "Desarrollador Web (Pasantía Profesional)" },

@@ -12,8 +12,8 @@ export const heroCopy = {
     es: ["Ingeniero en Sistemas", "Desarrollador Full Stack", "Desarrollador Frontend", "Desarrollador Web", "Desarrollador de Agentes IA"],
   } as Localized<string[]>,
   description: {
-    en: "I'm a passionate web developer based in Costa Rica. I specialize in creating intuitive web applications and modern user experiences.",
-    es: "Soy un apasionado desarrollador web de Costa Rica. Me especializo en crear aplicaciones web intuitivas y experiencias de usuario modernas.",
+    en: "Systems Engineer from Costa Rica. I build software end to end: web applications, custom systems and solutions powered by artificial intelligence and agents.",
+    es: "Ingeniero en Sistemas de Costa Rica. Desarrollo software de punta a punta: aplicaciones web, sistemas a la medida y soluciones con inteligencia artificial y agentes.",
   } as Localized,
   imageAlt: { en: "Line illustration of Oscar", es: "Ilustración de Oscar" } as Localized,
 };
@@ -21,7 +21,6 @@ export const heroCopy = {
 export const navLinks: { label: Localized; path: string }[] = [
   { label: { en: "Work", es: "Proyectos" }, path: "/" },
   { label: { en: "About", es: "Sobre mí" }, path: "/about" },
-  { label: { en: "Resume", es: "Currículum" }, path: "/resume" },
 ];
 
 export const siteCopy = {
@@ -38,12 +37,5 @@ export const siteCopy = {
     main: { en: "Main navigation", es: "Navegación principal" } as Localized,
     openMenu: { en: "Open menu", es: "Abrir menú" } as Localized,
     closeMenu: { en: "Close menu", es: "Cerrar menú" } as Localized,
-  },
-  resume: {
-    file: "/CV_Oscar_Zuniga_Sanchez_2026.pdf",
-    title: { en: "Resume", es: "Currículum" } as Localized,
-    download: { en: "Download resume", es: "Descargar currículum" } as Localized,
-    fallback: { en: "Your browser can't display PDFs. ", es: "Tu navegador no puede mostrar PDFs. " } as Localized,
-    open: { en: "Open it in a new tab", es: "Ábrelo en una pestaña nueva" } as Localized,
   },
 };

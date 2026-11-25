@@ -171,7 +171,7 @@ export function ExperienceTimeline() {
           style={{ scaleY }}
         />
         {workExperience.map((exp) => (
-          <ExperienceItem key={exp.company.en} exp={exp} />
+          <ExperienceItem key={`${exp.company.en}-${exp.position.en}`} exp={exp} />
         ))}
       </ol>
     </section>
